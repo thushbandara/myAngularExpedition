@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/customScript.js"></script>
+</head>
+<body>
+    <div ng-controller="myController">
+        <div>
+            Name : {{Country.Name}}
+        </div>
+
+        <div>
+            Capital : {{Country.Capital}}
+        </div>
+
+        <div>
+            <img ng-src="{{Country.Flag}}" style="width:200px;height:100px" alt="{{Country.Name + ' Flag'}}" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <div ng-controller="twowaybind">
+        <table>
+            <tr>
+                <td>Country Name</td>
+                <td>
+                    <input type="text" ng-model="Country.Name" />
+                </td>
+            </tr>
+            <tr>
+                <td>Capital</td>
+                <td>
+                    <input type="text" ng-model="Country.Capital" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td>Country Name</td>
+                <td>
+                    {{Country.Name}}
+                </td>
+            </tr>
+            <tr>
+                <td>Capital</td>
+                <td>
+                    {{Country.Capital}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+    <div ng-controller="ngrepeat">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.Gender}}</td>
+                    <td>{{employee.Salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <ul>
+            <li ng-repeat="country in countries">
+                {{country.name}} - Index = {{$index}}
+                <ul>
+                    <li ng-repeat="city in country.cities">
+                        {{city.name}} - Index = {{$index}}, ParentIndex = {{$parent.$index}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <div ng-controller="ngevents">
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in technologies">
+                    <td>
+                        {{technology.Name}}
+                    </td>
+                    <td>
+                        {{technology.Likes}}
+                    </td>
+                    <td>
+                        {{technology.Dislikes}}
+                    </td>
+                    <td>
+                        <input type="button" value="Like" ng-click="increaseLikes(technology)" />
+                        <input type="button" value="Dislike" ng-click="increaseDislikes(technology)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
