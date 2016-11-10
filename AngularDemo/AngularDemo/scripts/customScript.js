@@ -26,7 +26,7 @@ var myApp = angular
                         { firstName: "Thushara", lastName: "Bandara", Gender: "Male", Salary: 35000 },
                         { firstName: "Eranda", lastName: "Liyanage", Gender: "Male", Salary: 35000 },
                         { firstName: "Gihan", lastName: "Chanaka", Gender: "Male", Salary: 25000 },
-                        { firstName: "Sharaniya", lastName: "Jayasekaran", Gender: "Female", Salary: 55000 },
+                        { firstName: "Sharaniya", lastName: "Jayasekaran", Gender: "Female", Salary: 45345 },
                     ];
 
                     var countries = [
